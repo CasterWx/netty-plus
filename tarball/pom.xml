@@ -40,7 +40,7 @@
     <!-- All-in-one JAR -->
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>netty-all</artifactId>
+      <artifactId>netty-plus</artifactId>
       <version>${project.version}</version>
       <scope>compile</scope>
       <optional>true</optional>
@@ -164,7 +164,7 @@
                 <configuration>
                   <outputDirectory>${project.build.directory}/jars</outputDirectory>
                   <includeGroupIds>${project.groupId}</includeGroupIds>
-                  <excludeArtifactIds>netty-all</excludeArtifactIds>
+                  <excludeArtifactIds>netty-plus</excludeArtifactIds>
                 </configuration>
               </execution>
               <execution>
@@ -177,7 +177,7 @@
                   <classifier>sources</classifier>
                   <outputDirectory>${project.build.directory}/jars</outputDirectory>
                   <includeGroupIds>${project.groupId}</includeGroupIds>
-                  <excludeArtifactIds>netty-all</excludeArtifactIds>
+                  <excludeArtifactIds>netty-plus</excludeArtifactIds>
                 </configuration>
               </execution>
               <execution>
@@ -189,7 +189,7 @@
                 <configuration>
                   <outputDirectory>${project.build.directory}/jars-all</outputDirectory>
                   <includeGroupIds>${project.groupId}</includeGroupIds>
-                  <includeArtifactIds>netty-all</includeArtifactIds>
+                  <includeArtifactIds>netty-plus</includeArtifactIds>
                 </configuration>
               </execution>
               <execution>
@@ -202,7 +202,7 @@
                   <classifier>sources</classifier>
                   <outputDirectory>${project.build.directory}/jars-all</outputDirectory>
                   <includeGroupIds>${project.groupId}</includeGroupIds>
-                  <includeArtifactIds>netty-all</includeArtifactIds>
+                  <includeArtifactIds>netty-plus</includeArtifactIds>
                 </configuration>
               </execution>
               <execution>
@@ -215,7 +215,7 @@
                   <classifier>javadoc</classifier>
                   <outputDirectory>${project.build.directory}/apidocs-all</outputDirectory>
                   <includeGroupIds>${project.groupId}</includeGroupIds>
-                  <includeArtifactIds>netty-all</includeArtifactIds>
+                  <includeArtifactIds>netty-plus</includeArtifactIds>
                 </configuration>
               </execution>
             </executions>

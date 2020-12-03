@@ -36,10 +36,13 @@
     clients.
   </description>
 
-  <organization>
-    <name>The Netty Project</name>
-    <url>https://netty.io/</url>
-  </organization>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>Netty Plus</name>
+      <url>https://maven.pkg.github.com/CasterWx/netty-plus</url>
+    </repository>
+  </distributionManagement>
 
   <licenses>
     <license>

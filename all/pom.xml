@@ -23,16 +23,24 @@
     <version>4.1.41.Final</version>
   </parent>
 
-  <artifactId>netty-all</artifactId>
+  <artifactId>netty-plus</artifactId>
   <packaging>jar</packaging>
 
-  <name>Netty/All-in-One</name>
+  <name>Netty Plus</name>
 
   <properties>
     <generatedSourceDir>${project.build.directory}/src</generatedSourceDir>
     <dependencyVersionsDir>${project.build.directory}/versions</dependencyVersionsDir>
     <skipJapicmp>true</skipJapicmp>
   </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>Netty Plus</name>
+      <url>https://maven.pkg.github.com/CasterWx/netty-plus</url>
+    </repository>
+  </distributionManagement>
 
   <profiles>
     <!-- If the uber profile is used it will automatically fetch the missing native jar from maven and add it to the all jar as well. -->
@@ -112,7 +120,7 @@
           <scope>compile</scope>
           <optional>true</optional>
         </dependency>
-        <!-- Just include the classes for the other platform so these are at least present in the netty-all artifact -->
+        <!-- Just include the classes for the other platform so these are at least present in the netty-plus artifact -->
         <dependency>
           <groupId>${project.groupId}</groupId>
           <artifactId>netty-transport-native-kqueue</artifactId>

@@ -45,15 +45,16 @@ public class RedisClient {
         try {
             Bootstrap b = new Bootstrap();
             b.group(group)
+                    // 作为redis客户端连接
              .channel(NioSocketChannel.class)
              .handler(new ChannelInitializer<SocketChannel>() {
                  @Override
                  protected void initChannel(SocketChannel ch) throws Exception {
                      ChannelPipeline p = ch.pipeline();
-                     p.addLast(new RedisDecoder());
+                     p.addLast(new RedisDecoder()); // 解码
                      p.addLast(new RedisBulkStringAggregator());
-                     p.addLast(new RedisArrayAggregator());
-                     p.addLast(new RedisEncoder());
+                     p.addLast(new RedisArrayAggregator()); // 聚合?
+                     p.addLast(new RedisEncoder()); // 编码
                      p.addLast(new RedisClientHandler());
                  }
              });

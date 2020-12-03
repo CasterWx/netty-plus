@@ -1,37 +1,55 @@
-# netty-parent
+# Netty Plus
 
-#### 介绍
-netty源码阅读
+### 使用方式
 
-#### 软件架构
-软件架构说明
+修改本地Maven配置文件settings.xml
 
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-#### 安装教程
+  <activeProfiles>
+    <activeProfile>github</activeProfile>
+  </activeProfiles>
+  <profiles>
+    <profile>
+      <id>github</id>
+      <repositories>
+        <repository>
+                  <id>central</id>
+                  <url>https://repo1.maven.org/maven2</url>
+                  <releases><enabled>true</enabled></releases>
+                  <snapshots><enabled>true</enabled></snapshots>
+                </repository>
+        <repository>
+          <id>github</id>
+          <name>Caster Netty Plus Maven Packages</name>
+          <url>https://maven.pkg.github.com/CasterWx/netty-plus</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+  <servers>
+    <server>
+      <id>github</id>
+      <username>填写你的Github用户名</username>
+      <password>填写你的Github token</password>
+    </server>
+  </servers>
+</settings>
+```
 
-#### 使用说明
+引入Netty Plus依赖
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```xml
+<dependency>
+    <groupId>io.netty</groupId>
+    <artifactId>netty-plus</artifactId>
+    <version>4.1.41.Final</version>
+</dependency>
+```
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+执行`mvn install`即可。
